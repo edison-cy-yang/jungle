@@ -17,11 +17,11 @@ RSpec.feature "Visitor navigates to a product from the home page", type: :featur
   end
   scenario "They see one product detail" do
     visit root_path
-    save_screenshot
+    # save_screenshot
 
     page.first('article.product img').click
     page.find('.products-show')
-    save_screenshot
+    # save_screenshot
     
   end
 end
