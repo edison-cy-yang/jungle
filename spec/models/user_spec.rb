@@ -43,17 +43,17 @@ RSpec.describe User, type: :model do
 
   describe ".authenticate_with_credentials" do 
     context "when a user is already registered" do
-      before {described_class.create!(last_name: "yang", first_name: "edison", email: "Edison@gmail.com", password: "12345", password_confirmation: "12345")}
+      before {described_class.create!(last_name: "yang", first_name: "edison", email: "Edison.yang@gmail.com", password: "12345", password_confirmation: "12345")}
       it "should be valid given correct email and password" do
-        user = User.authenticate_with_credentials("Edison@gmail.com", "12345")
+        user = User.authenticate_with_credentials("Edison.yang@gmail.com", "12345")
         expect(user).to be_a(User)
       end
       it "should be able to authenticate with trailing spaces in email" do
-        user = User.authenticate_with_credentials(" Edison@gmail.com", "12345")
+        user = User.authenticate_with_credentials(" Edison.yang@gmail.com", "12345")
         expect(user).to be_a(User)
       end
       it "should be able to authenticate with wrong case in email" do
-        user = User.authenticate_with_credentials("EdIson@gmail.com", "12345")
+        user = User.authenticate_with_credentials("EdIson.yang@gmail.com", "12345")
         expect(user).to be_a(User)
       end
     end
